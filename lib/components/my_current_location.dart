@@ -5,30 +5,58 @@ class MyCurrentLocation extends StatelessWidget {
 
   void openLocationSearchBox(BuildContext context) {
     showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-              title: const Text("Your location"),
-              content: const TextField(
-                decoration: InputDecoration(hintText: "Search address..."),
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: Theme.of(context).colorScheme.surface, // Dialog background color
+        title: Text(
+          "Your location",
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.onSurface, // Title text color
+          ),
+        ),
+        content: TextField(
+          decoration: InputDecoration(
+            hintText: "Search address...",
+            hintStyle: TextStyle(
+              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6), // Hint text color
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Theme.of(context).colorScheme.primary, // Border color
               ),
-              actions: [
-                //cancel button
-                MaterialButton(
-                  onPressed: () => {
-                    Navigator.pop(context),
-                  },
-                  child: const Text("Cancel"),
-                ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Theme.of(context).colorScheme.primary, // Focused border color
+              ),
+            ),
+          ),
+        ),
+        actions: [
+          // Cancel button
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(
+              "Cancel",
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.error, // Error color for cancel
+              ),
+            ),
+          ),
 
-                //save button
-                MaterialButton(
-                  onPressed: () => {
-                    Navigator.pop(context),
-                  },
-                  child: const Text("Save"),
-                )
-              ],
-            ));
+          // Save button
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(
+              "Save",
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.primary, // Primary color for save
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -38,19 +66,29 @@ class MyCurrentLocation extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             "Deliver Now",
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).colorScheme.onSurface, // Dynamic text color
+            ),
           ),
           GestureDetector(
             onTap: () => openLocationSearchBox(context),
-            child: const Row(
+            child: Row(
               children: [
-                //address
+                // Address
                 Text(
-                    "29 A, 1st Floor, 1st Main, 1st Block, Koramangala, Bangalore"),
-                //dropdown menu
-                Icon(Icons.keyboard_arrow_down_rounded),
+                  "29 A, 1st Floor, 1st Main",
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onSurface, // Dynamic text color
+                  ),
+                ),
+                // Dropdown menu icon
+                Icon(
+                  Icons.keyboard_arrow_down_rounded,
+                  color: Theme.of(context).colorScheme.onSurface, // Dynamic icon color
+                ),
               ],
             ),
           )

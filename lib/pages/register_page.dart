@@ -26,11 +26,10 @@ class _RegisterPageState extends State<RegisterPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             //logo
-
             Icon(
-              Icons.lock_open_rounded,
+              Icons.lock_outline_rounded,
               size: 100,
-              color: Theme.of(context).colorScheme.inversePrimary,
+              color: Theme.of(context).colorScheme.primary,
             ),
             const SizedBox(
               height: 25,
@@ -39,36 +38,39 @@ class _RegisterPageState extends State<RegisterPage> {
             Text(
               "Let's create an account for you!",
               style: TextStyle(
-                fontSize: 30,
-                color: Theme.of(context).colorScheme.onSurface,
+                fontSize: 20,
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
             const SizedBox(
               height: 25,
             ),
 
-            //email
+            //email field
             MyTextfield(
-                controller: emailController,
-                hintText: "Email",
-                obscureText: false),
+              controller: emailController,
+              hintText: "Email",
+              obscureText: false,
+            ),
 
             const SizedBox(
               height: 25,
             ),
-            //password
+            //password field
             MyTextfield(
-                controller: passwordController,
-                hintText: "Password",
-                obscureText: true),
+              controller: passwordController,
+              hintText: "Password",
+              obscureText: true,
+            ),
             const SizedBox(
               height: 25,
             ),
-            //password
+            //confirm password field
             MyTextfield(
-                controller: confirmPasswordController,
-                hintText: "Confirm Password",
-                obscureText: true),
+              controller: confirmPasswordController,
+              hintText: "Confirm Password",
+              obscureText: true,
+            ),
             const SizedBox(
               height: 25,
             ),
@@ -82,15 +84,15 @@ class _RegisterPageState extends State<RegisterPage> {
               height: 25,
             ),
 
-            //register button
-
+            //login button
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   "Already have an account?",
-                  style:
-                      TextStyle(color: Theme.of(context).colorScheme.primary),
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
                 ),
                 const SizedBox(
                   width: 4,
@@ -100,8 +102,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   child: Text(
                     "Login",
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).colorScheme.primary),
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
                 ),
               ],

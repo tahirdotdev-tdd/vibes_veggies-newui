@@ -9,10 +9,10 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor: Theme.of(context).colorScheme.surface, // Surface color for drawer background
       child: Column(
         children: [
-          //app logo
+          // App logo
           Padding(
             padding: const EdgeInsets.only(top: 100.0),
             child: Image.asset(
@@ -22,28 +22,46 @@ class MyDrawer extends StatelessWidget {
             ),
           ),
 
-          const Padding(
-            padding: EdgeInsets.all(25.0),
-            child: Divider(),
+          // Divider with themed color
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Divider(
+              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5), // Subtle divider color
+              thickness: 1,
+            ),
           ),
 
-          //home list tiles
-          MyDrawerTile(text: "H O M E", icon: Icons.home, onTap: () {
-            Navigator.pop(context);
-          },),
-          const SizedBox(height: 30,),
+          // Home list tile
+          MyDrawerTile(
+            text: "H O M E",
+            icon: Icons.home,
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          const SizedBox(height: 30),
 
-          //settings
-          MyDrawerTile(text: "S E T T I N G S", icon: Icons.settings, onTap: () {
-            Navigator.pop(context);
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> const SettingsPage()));
-
-          }),
+          // Settings list tile
+          MyDrawerTile(
+            text: "S E T T I N G S",
+            icon: Icons.settings,
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsPage()),
+              );
+            },
+          ),
           const Spacer(),
 
-          //log out
-          MyDrawerTile(text: "L O G O U T", icon: Icons.logout, onTap: () {}),
-          const SizedBox(height: 30,),
+          // Log out list tile
+          MyDrawerTile(
+            text: "L O G O U T",
+            icon: Icons.logout,
+            onTap: () {},
+          ),
+          const SizedBox(height: 30),
         ],
       ),
     );

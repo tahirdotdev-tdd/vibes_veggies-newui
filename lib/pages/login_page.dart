@@ -8,10 +8,10 @@ class LoginPage extends StatefulWidget {
   final void Function()? onTap;
   const LoginPage(
       {super.key,
-      required this.emailHintText,
-      required this.passwordHintText,
-      required this.obscureText,
-      this.onTap});
+        required this.emailHintText,
+        required this.passwordHintText,
+        required this.obscureText,
+        this.onTap});
 
   final String emailHintText;
   final String passwordHintText;
@@ -43,11 +43,10 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             //logo
-
             Icon(
-              Icons.lock_open_rounded,
+              Icons.lock_outline_rounded,
               size: 100,
-              color: Theme.of(context).colorScheme.inversePrimary,
+              color: Theme.of(context).colorScheme.primary,
             ),
             const SizedBox(
               height: 25,
@@ -57,27 +56,29 @@ class _LoginPageState extends State<LoginPage> {
               "Login to Veggie Vibes",
               style: TextStyle(
                 fontSize: 30,
-                color: Theme.of(context).colorScheme.onSurface,
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
             const SizedBox(
               height: 25,
             ),
 
-            //email
+            //email field
             MyTextfield(
-                controller: emailController,
-                hintText: "Email",
-                obscureText: false),
+              controller: emailController,
+              hintText: widget.emailHintText,
+              obscureText: false,
+            ),
 
             const SizedBox(
               height: 25,
             ),
-            //password
+            //password field
             MyTextfield(
-                controller: passwordController,
-                hintText: "Password",
-                obscureText: true),
+              controller: passwordController,
+              hintText: widget.passwordHintText,
+              obscureText: widget.obscureText,
+            ),
             const SizedBox(
               height: 25,
             ),
@@ -92,14 +93,14 @@ class _LoginPageState extends State<LoginPage> {
             ),
 
             //register button
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   "Not a member?",
-                  style:
-                      TextStyle(color: Theme.of(context).colorScheme.primary),
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
                 ),
                 const SizedBox(
                   width: 4,
@@ -109,8 +110,9 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     "Register now",
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).colorScheme.primary),
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
                 ),
               ],
