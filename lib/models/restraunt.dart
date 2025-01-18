@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:provider/provider.dart';
 import 'package:vibes_veggies/models/food.dart';
 
 class Restraunt extends ChangeNotifier {
