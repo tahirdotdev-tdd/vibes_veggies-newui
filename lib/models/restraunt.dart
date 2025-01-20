@@ -8,6 +8,39 @@ class Restraunt extends ChangeNotifier {
     Food(
       name: "Palak",
       description: "Fresh, pre-cut and ready-to-cook",
+      imagePath: "lib/images/greeenVeggies/cauliflower.jpeg",
+      price: "250.0 PKR",
+      category: FoodCategories.greenVeggies,
+      availableAddons: [
+        AddOn(name: "Masalah", price: "30"),
+        AddOn(name: "Lehsan", price: "30"),
+      ],
+    ),
+    Food(
+      name: "Palak",
+      description: "Fresh, pre-cut and ready-to-cook",
+      imagePath: "lib/images/greeenVeggies/cauliflower.jpeg",
+      price: "250.0 PKR",
+      category: FoodCategories.greenVeggies,
+      availableAddons: [
+        AddOn(name: "Masalah", price: "30"),
+        AddOn(name: "Lehsan", price: "30"),
+      ],
+    ),
+    Food(
+      name: "Palak",
+      description: "Fresh, pre-cut and ready-to-cook",
+      imagePath: "lib/images/greeenVeggies/gobi.jpeg",
+      price: "250.0 PKR",
+      category: FoodCategories.greenVeggies,
+      availableAddons: [
+        AddOn(name: "Masalah", price: "30"),
+        AddOn(name: "Lehsan", price: "30"),
+      ],
+    ),
+    Food(
+      name: "Palak",
+      description: "Fresh, pre-cut and ready-to-cook",
       imagePath: "lib/images/greeenVeggies/gobi.jpeg",
       price: "250.0 PKR",
       category: FoodCategories.greenVeggies,
