@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:vibes_veggies/components/my_button.dart';
+import 'package:vibes_veggies/main.dart';
+import 'package:vibes_veggies/models/restraunt.dart';
 
 import '../models/food.dart';
 
@@ -18,6 +21,17 @@ class FoodPage extends StatefulWidget {
 }
 
 class _FoodPageState extends State<FoodPage> {
+  void addToCart(Food food, Map<AddOn, bool> selectedAddons) {
+    Navigator.pop(context);
+    List<AddOn> currentlySelectedAddons = [];
+    for (AddOn addOn in widget.food.availableAddons) {
+      if (widget.selectedAddons[addOn] == true) {
+        currentlySelectedAddons.add(addOn);
+      }
+    }
+    context.read<Restraunt>().addToCart(food, currentlySelectedAddons);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -91,7 +105,7 @@ class _FoodPageState extends State<FoodPage> {
                               AddOn addon = widget.food.availableAddons[index];
                               return CheckboxListTile(
                                 title: Text(addon.name),
-                                subtitle: Text('${addon.price}\ PKR'),
+                                subtitle: Text('${addon.price} PKR'),
                                 value: widget.selectedAddons[addon],
                                 onChanged: (bool? value) {
                                   setState(() {
@@ -108,7 +122,7 @@ class _FoodPageState extends State<FoodPage> {
 
                 MyButton(
                   text: "Add to cart",
-                  onTap: () {},
+                  onTap: () => addToCart(widget.food, widget.selectedAddons),
                 ),
                 const SizedBox(
                   height: 25,

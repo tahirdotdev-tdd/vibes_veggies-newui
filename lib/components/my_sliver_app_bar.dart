@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vibes_veggies/pages/cart_page.dart';
 
 class MySliverAppBar extends StatelessWidget {
   final Widget child;
@@ -9,8 +10,10 @@ class MySliverAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: Theme.of(context).colorScheme.surface, // Dynamic surface color
-      foregroundColor: Theme.of(context).colorScheme.onSurface, // Dynamic foreground color
+      backgroundColor:
+          Theme.of(context).colorScheme.surface, // Dynamic surface color
+      foregroundColor:
+          Theme.of(context).colorScheme.onSurface, // Dynamic foreground color
       expandedHeight: 340,
       collapsedHeight: 120,
       floating: false,
@@ -22,7 +25,10 @@ class MySliverAppBar extends StatelessWidget {
             Icons.shopping_cart,
             color: Theme.of(context).colorScheme.primary, // Dynamic icon color
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const CartPage()));
+          },
         ),
       ],
       title: Text(
@@ -36,10 +42,12 @@ class MySliverAppBar extends StatelessWidget {
         title: title,
         centerTitle: true,
         titlePadding:
-        const EdgeInsets.only(left: 0, right: 0, bottom: 16, top: 0),
+            const EdgeInsets.only(left: 0, right: 0, bottom: 16, top: 0),
         expandedTitleScale: 1.0,
         background: Container(
-          color: Theme.of(context).colorScheme.surface, // Matches the surface color
+          color: Theme.of(context)
+              .colorScheme
+              .surface, // Matches the surface color
           child: Padding(
             padding: const EdgeInsets.only(bottom: 50.0),
             child: child,
