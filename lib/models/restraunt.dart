@@ -97,7 +97,6 @@ class Restraunt extends ChangeNotifier {
   //Operations
   final List<CartItem> _cart = [];
 
-
   //-> Add to cart
   void addToCart(Food food, List<AddOn> selectedAddons) {
     CartItem? cartItem = _cart.firstWhereOrNull((item) {
