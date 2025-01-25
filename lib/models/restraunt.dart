@@ -9,20 +9,31 @@ class Restraunt extends ChangeNotifier {
     Food(
       name: "Palak",
       description: "Fresh, pre-cut and ready-to-cook",
-      imagePath: "lib/images/greeenVeggies/cauliflower.jpeg",
+      imagePath: "lib/images/greeenVeggies/palak.jpeg",
       price: "250.0 PKR",
-      category: FoodCategories.greenVeggies,
+      category: FoodCategories.Green,
       availableAddons: [
         AddOn(name: "Masalah", price: "30"),
         AddOn(name: "Lehsan", price: "30"),
       ],
     ),
     Food(
-      name: "Palak",
+      name: "Methi",
       description: "Fresh, pre-cut and ready-to-cook",
-      imagePath: "lib/images/greeenVeggies/cauliflower.jpeg",
+      imagePath: "lib/images/greeenVeggies/methi.jpeg",
       price: "250.0 PKR",
-      category: FoodCategories.greenVeggies,
+      category: FoodCategories.Green,
+      availableAddons: [
+        AddOn(name: "Masalah", price: "30"),
+        AddOn(name: "Lehsan", price: "30"),
+      ],
+    ),
+    Food(
+      name: "Mattar (Peas)",
+      description: "Fresh, pre-cut and ready-to-cook",
+      imagePath: "lib/images/greeenVeggies/peas.jpeg",
+      price: "250.0 PKR",
+      category: FoodCategories.Green,
       availableAddons: [
         AddOn(name: "Masalah", price: "30"),
         AddOn(name: "Lehsan", price: "30"),
@@ -33,18 +44,7 @@ class Restraunt extends ChangeNotifier {
       description: "Fresh, pre-cut and ready-to-cook",
       imagePath: "lib/images/greeenVeggies/gobi.jpeg",
       price: "250.0 PKR",
-      category: FoodCategories.greenVeggies,
-      availableAddons: [
-        AddOn(name: "Masalah", price: "30"),
-        AddOn(name: "Lehsan", price: "30"),
-      ],
-    ),
-    Food(
-      name: "Palak",
-      description: "Fresh, pre-cut and ready-to-cook",
-      imagePath: "lib/images/greeenVeggies/gobi.jpeg",
-      price: "250.0 PKR",
-      category: FoodCategories.greenVeggies,
+      category: FoodCategories.Green,
       availableAddons: [
         AddOn(name: "Masalah", price: "30"),
         AddOn(name: "Lehsan", price: "30"),
@@ -57,7 +57,7 @@ class Restraunt extends ChangeNotifier {
       description: "Fresh, pre-cut and ready-to-cook",
       imagePath: "lib/images/nonGreen/turnips.jpeg",
       price: "300.0 PKR",
-      category: FoodCategories.nonGreenVeggies,
+      category: FoodCategories.NonGreen,
       availableAddons: [
         AddOn(name: "Masalah", price: "30"),
         AddOn(name: "Lehsan", price: "30"),
@@ -70,7 +70,7 @@ class Restraunt extends ChangeNotifier {
       description: "Fresh, pre-cut and ready-to-cook",
       imagePath: "lib/images/masalah/dhania.jpeg",
       price: "300.0 PKR",
-      category: FoodCategories.masalah,
+      category: FoodCategories.Masalah,
       availableAddons: [
         AddOn(name: "Lehsan", price: "30"),
       ],
@@ -82,12 +82,67 @@ class Restraunt extends ChangeNotifier {
       description: "Fresh, pre-cut and ready-to-cook",
       imagePath: "lib/images/nonGreen/carrots.jpeg",
       price: "150.0 PKR",
-      category: FoodCategories.nonGreenVeggies,
+      category: FoodCategories.NonGreen,
       availableAddons: [
         AddOn(name: "Masalah", price: "30"),
         AddOn(name: "Lehsan", price: "30"),
       ],
-    )
+    ),
+    Food(
+      name: "Lehsan Paste",
+      description: "Fresh, pre-cut and ready-to-cook",
+      imagePath: "lib/images/nonGreen/carrots.jpeg",
+      price: "150.0 PKR",
+      category: FoodCategories.Pastes,
+      availableAddons: [
+        AddOn(name: "Masalah", price: "30"),
+        AddOn(name: "Lehsan", price: "30"),
+      ],
+    ),
+    Food(
+      name: "Adrak Paste",
+      description: "Fresh, pre-cut and ready-to-cook",
+      imagePath: "lib/images/nonGreen/carrots.jpeg",
+      price: "150.0 PKR",
+      category: FoodCategories.Pastes,
+      availableAddons: [
+        AddOn(name: "Masalah", price: "30"),
+        AddOn(name: "Lehsan", price: "30"),
+      ],
+    ),
+    Food(
+      name: "Normal Salad",
+      description: "Fresh, pre-cut and ready-to-cook",
+      imagePath: "lib/images/nonGreen/carrots.jpeg",
+      price: "150.0 PKR",
+      category: FoodCategories.Salads,
+      availableAddons: [
+        AddOn(name: "Masalah", price: "30"),
+        AddOn(name: "Lehsan", price: "30"),
+      ],
+    ),
+    Food(
+      name: "Special Paste",
+      description: "Fresh, pre-cut and ready-to-cook",
+      imagePath: "lib/images/nonGreen/carrots.jpeg",
+      price: "150.0 PKR",
+      category: FoodCategories.Salads,
+      availableAddons: [
+        AddOn(name: "Masalah", price: "30"),
+        AddOn(name: "Lehsan", price: "30"),
+      ],
+    ),
+    Food(
+      name: "Family Special",
+      description: "Fresh, pre-cut and ready-to-cook",
+      imagePath: "lib/images/nonGreen/carrots.jpeg",
+      price: "150.0 PKR",
+      category: FoodCategories.Salads,
+      availableAddons: [
+        AddOn(name: "Masalah", price: "30"),
+        AddOn(name: "Lehsan", price: "30"),
+      ],
+    ),
   ];
 
   //Getters

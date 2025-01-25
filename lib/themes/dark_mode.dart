@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 ThemeData darkMode = ThemeData(
   colorScheme: const ColorScheme.dark(
     brightness: Brightness.dark,
-    primary: Color(0xFF1E88E5), // Vibrant blue for primary color
+    primary: Color(0xFFA7C7E7), // Vibrant blue for primary color
     onPrimary: Colors.white, // White for text/icons on the primary color
     secondary: Color(0xFF424242), // Dark grey for secondary elements
     tertiary: Color(0xFF616161), // Medium grey for accents and less prominent elements

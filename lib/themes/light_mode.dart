@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 ThemeData lightMode = ThemeData(
   colorScheme: ColorScheme.light(
     brightness: Brightness.light,
-    primary: Colors.blue, // A soft blue for the primary color
+    primary: const Color(0xFF228B22D), // A soft blue for the primary color
     onPrimary: Colors.white, // White for text/icons on the primary color
     secondary: Colors.white12, // A warm amber for accents
     onSecondary: Colors.black, // Black for text/icons on the secondary color

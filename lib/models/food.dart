@@ -19,11 +19,11 @@ class Food {
 //food categories
 
 enum FoodCategories {
-  greenVeggies,
-  nonGreenVeggies,
-  salads,
-  pastes,
-  masalah,
+  Green,
+  NonGreen,
+  Salads,
+  Pastes,
+  Masalah,
 }
 
 //addons
